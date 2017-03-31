@@ -35,25 +35,6 @@ default['wordpress']['db']['host'] = 'localhost'
 default['wordpress']['db']['port'] = '3306'  # Must be a string
 default['wordpress']['db']['charset'] = 'utf8'
 default['wordpress']['db']['collate'] = ''
-case node['platform']
-when 'ubuntu'
-  case node['platform_version']
-  when '10.04'
-    default['wordpress']['db']['mysql_version'] = '5.1'
-  else
-    default['wordpress']['db']['mysql_version'] = '5.5'
-  end
-when 'centos', 'redhat', 'amazon', 'scientific'
-  if node['platform_version'].to_i < 6
-    default['wordpress']['db']['mysql_version'] = '5.0'
-  elsif node['platform_version'].to_i < 7
-    default['wordpress']['db']['mysql_version'] = '5.1'
-  else
-    default['wordpress']['db']['mysql_version'] = '5.5'
-  end
-else
-  default['wordpress']['db']['mysql_version'] = '5.5'
-end
 
 default['wordpress']['allow_multisite'] = false
 

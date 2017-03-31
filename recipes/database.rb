@@ -44,7 +44,6 @@ if is_local_host? db['host']
 
   mysql_service db['instance_name'] do
     port db['port']
-    version db['mysql_version']
     initial_root_password db['root_password']
     action [:create, :start]
   end
