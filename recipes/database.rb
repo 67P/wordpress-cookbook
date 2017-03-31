@@ -54,8 +54,8 @@ if is_local_host? db['host']
   if node['platform_family'] == 'debian'
     directory "/var/run/mysqld" do
       action :create
-      owner  db['user']
-      group  db['user']
+      owner  "mysql"
+      group  "mysql"
     end
     link '/var/run/mysqld/mysqld.sock' do
       to socket
