@@ -20,7 +20,7 @@ depends "mysql2_chef_gem", ">= 1.0.1"
 depends "build-essential"
 depends "iis", ">= 1.6.2"
 depends "tar", ">= 0.3.1"
-depends "chef_nginx"
+depends "nginx"
 depends "php-fpm"
 depends 'selinux', '~> 0.7'
 
